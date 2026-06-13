@@ -41,6 +41,8 @@ The application uses a Supabase `courses` table:
 | created_at | timestamp |
 
 Course cards are generated dynamically from this database data.
+
+## Challenges Faced
 ## Architecture
 
 ### Server Components
