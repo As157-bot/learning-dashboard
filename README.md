@@ -28,6 +28,19 @@ The dashboard fetches course data from Supabase and displays it using a responsi
 - Loading skeletons
 - Dark mode UI
 
+## Supabase Database Schema
+
+The application uses a Supabase `courses` table:
+
+| Column | Type |
+|---|---|
+| id | uuid |
+| title | text |
+| progress | integer |
+| icon_name | text |
+| created_at | timestamp |
+
+Course cards are generated dynamically from this database data.
 ## Architecture
 
 ### Server Components
@@ -49,7 +62,7 @@ Create a `.env.local` file:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 ```
 
 ## Run Locally
@@ -62,7 +75,13 @@ npm run dev
 ## Deployment
 
 The application is deployed using Vercel.
+## Challenges Faced
 
+- Implementing secure Supabase fetching with Next.js Server Components
+- Managing Server and Client Component separation
+- Creating reusable animated UI components
+- Dynamically rendering Lucide icons from database values
+- Building a responsive Bento Grid layout
 ## Author
 
 Asish
